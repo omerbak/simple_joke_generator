@@ -6,7 +6,7 @@ const UseRandomJoke = (firstName, lastName, change) => {
     React.useEffect(() => {
         
         async function fetchJoke(){
-            const response = await fetch(`https://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`);
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`);
             const data = await response.json();
             setJoke((data.value.joke).replace(/&quot;/g, '"'));
     
